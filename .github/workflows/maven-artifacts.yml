@@ -20,7 +20,7 @@ jobs:
       # - name: Set version
       #   run: mvn versions:set -DnewVersion=$(git describe --tags)-KC${{ matrix.version }}
       - name: Build with Maven
-        run: mvn -Dkeycloak.version=1.0.0.${{ GITHUB_RUN_NUMBER }} -B package --file pom.xml
+        run: mvn -B package --file pom.xml
 
       - name: Create Artifacts
         run: mkdir packages && find target/ -type f -name "keycloak-2fa-email-authenticator*" -exec cp {} packages/ \;
